@@ -65,6 +65,7 @@ class _StoryPage extends State<StoryPage> {
                     model.setBoardColor(Colors.black);
                     model.setTextColor(Colors.white);
                   },
+                  child: (model.boardColor == Colors.black) ? Icon(Icons.check) : null
                 ),
                 FloatingActionButton(
                   backgroundColor: Colors.white,
@@ -72,6 +73,8 @@ class _StoryPage extends State<StoryPage> {
                     model.setBoardColor(Colors.white);
                     model.setTextColor(Colors.black);
                   },
+                  child: (model.boardColor == Colors.white) ? Icon(Icons.check) : null,
+                  foregroundColor: Colors.black,
                 ),
                 FloatingActionButton(
                   backgroundColor: Color(0XFFFFFEEE),
@@ -79,6 +82,8 @@ class _StoryPage extends State<StoryPage> {
                     model.setBoardColor(Color(0XFFFFFEEE));
                     model.setTextColor(Colors.black);
                   },
+                  child: (model.boardColor == Color(0XFFFFFEEE)) ? Icon(Icons.check) : null,
+                  foregroundColor: Colors.black,
                 ),
               ],
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
