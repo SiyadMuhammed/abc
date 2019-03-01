@@ -1,29 +1,34 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:scoped_model/scoped_model.dart';
 
 import 'package:nine_stories/models/story.dart';
 import 'package:nine_stories/list.dart';
+import 'package:nine_stories/models/story_theme.dart';
 
 void main() {
-  runApp(new MaterialApp(
-    debugShowCheckedModeBanner: false,
-    theme: new ThemeData(
-      primaryColor: const Color(0xFF02BB9F),
-      primaryColorDark: const Color(0xFF167F67),
-      accentColor: const Color(0xFF167F67),
-    ),
-    home: new MyApp(),
-  ));
+  runApp(new MyApp());
 }
 
-class MyApp extends StatefulWidget {
+class MyApp extends StatelessWidget {
   @override
-  _MyAppState createState() => new _MyAppState();
+  Widget build(BuildContext context) {
+    return ScopedModel<StoryTheme>(
+      model: StoryTheme(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: new ThemeData(
+          primaryColor: const Color(0xFF02BB9F),
+          primaryColorDark: const Color(0xFF167F67),
+          accentColor: const Color(0xFF167F67),
+        ),
+        home:  HomePage(),
+      ),
+    );
+  }
 }
 
-class _MyAppState extends State<MyApp> {
-  List data;
-
+class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
