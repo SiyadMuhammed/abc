@@ -24,6 +24,13 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: "^0.7.0"
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon/planet.png"
+
 
 
 # For information on the generic Dart part of this file, see the
@@ -48,6 +55,7 @@ flutter:
       - assets/images/boy-cried-wolf.jpg
       - assets/images/golden-goose.jpg
       - assets/images/princess-and-pea.jpeg
+      - assets/icon/planet.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.
