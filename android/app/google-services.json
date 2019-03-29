@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "893212002608",
+    "firebase_url": "https://nine-stories.firebaseio.com",
+    "project_id": "nine-stories",
+    "storage_bucket": "nine-stories.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:893212002608:android:81ca100e0fd85d44",
+        "android_client_info": {
+          "package_name": "com.example.ninestories"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "893212002608-mnns1pf743i49s64dirdl70db9acbev2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtG2nOiKm-hCYqo2Pqu5TrfsQKOJRW0_0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,4 +1,4 @@
-import 'dart:convert';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
 
@@ -37,27 +37,27 @@ class HomePage extends StatelessWidget {
             style: new TextStyle(color: Colors.white),),
         ),
         body: new Container(
-          child: new Center(
-            // Use future builder and DefaultAssetBundle to load the local JSON file
-            child: new FutureBuilder(
-                future: DefaultAssetBundle.of(context)
-                    .loadString('assets/data/stories.json'),
-                builder: (context, snapshot) {
-                  List<Story> stories = parseJson(snapshot.data.toString());
-                  return stories.isNotEmpty ? new StoryList(stories: stories)
-                      : new Center(child: new CircularProgressIndicator());
-                }),
+            child: new Center(child: _buildBody(context),
           ),
         )
     );
   }
 
-  List<Story> parseJson(String response) {
-    if(response == null) {
-      return [];
-    }
+  Widget _buildBody(BuildContext context) {
+    return StreamBuilder<QuerySnapshot>(
+      stream: Firestore.instance.collection('stories').snapshots(),
+      builder: (context, snapshot) {
+        if (!snapshot.hasData) return CircularProgressIndicator();
 
-    final parsed = json.decode(response.toString()).cast<Map<String, dynamic>>();
-    return parsed.map<Story>((json) => new Story.fromJson(json)).toList();
+        List<Story> stories = [];
+        if (snapshot.data.documents.isNotEmpty) {
+          for(var value in snapshot.data.documents) {
+            stories.add(new Story.fromSnapshot(value));
+          }
+        }
+
+        return new StoryList(stories: stories);
+      },
+    );
   }
 }

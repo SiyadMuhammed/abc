@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Story {
   final String title;
@@ -13,12 +14,12 @@ class Story {
     this.image
   });
 
-  factory Story.fromJson(Map<String, dynamic> json) {
+  factory Story.fromSnapshot(DocumentSnapshot snapshot) {
     return new Story(
-      title: json['title'] as String,
-      summary: json['summary'] as String,
-      body: json['story'] as String,
-      image: json['image'] as String,
+      title: snapshot['title'] as String,
+      summary: snapshot['summary'] as String,
+      body: snapshot['story'] as String,
+      image: snapshot['image'] as String,
     );
   }
 }

@@ -16,7 +16,7 @@ class StoryPage extends StatefulWidget {
 class _StoryPage extends State<StoryPage> {
   Widget _buildImageWidget(String image) {
     if (image.isNotEmpty) {
-      return Image.asset(image);
+      return Image.network(image);
     }
     return SizedBox();
   }

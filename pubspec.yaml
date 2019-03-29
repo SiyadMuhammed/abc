@@ -16,6 +16,7 @@ dependencies:
   flutter:
     sdk: flutter
   scoped_model: ^1.0.1
+  cloud_firestore: ^0.9.7
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -29,7 +30,7 @@ dev_dependencies:
 flutter_icons:
   android: true
   ios: true
-  image_path: "assets/icon/planet.png"
+  image_path: "assets/icon/reading.jpg"
 
 
 
@@ -46,16 +47,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-      - assets/data/stories.json
-      - assets/images/city-rat-and-village-rat.jpg
-      - assets/images/friends-for-ever.jpg
-      - assets/images/the-ugly-duckling.jpg
-      - assets/images/prince-and-snake.jpg
-      - assets/images/the-judge-monkey.jpg
-      - assets/images/boy-cried-wolf.jpg
-      - assets/images/golden-goose.jpg
-      - assets/images/princess-and-pea.jpeg
-      - assets/icon/planet.png
+      - assets/icon/reading.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.
